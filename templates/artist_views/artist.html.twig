@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductViewsController!{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-center mt-5">
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('/uploads/' ~ artist.picture) }}​​" class="card-img-top" alt="{{ artist.name }}">
+  <div class="card-body">
+    <h2 class="text-center">{{artist.name}}</h2>
+    <p>Style de l'artiste : {{artist.style.name}}<p>
+    <h5>Les albums de l'artiste</h5>
+     {% for album in artist.albums %}
+     <ul class="list-group list-group-flush">
+        <li class="list-group-item"> {{album.name}}</li>
+    </ul>
+    {% endfor %}
+ <div class="card-body">
+ <h5>Les artistes similaires<h5>
+  {% for artist in artist.style.artists %}
+    <a href="{{path('artist_item', {'id' : artist.id})}}" class="card-link">{{artist.name}}</a>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+

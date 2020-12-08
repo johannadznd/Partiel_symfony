@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArtistViewsController!{% endblock %}
+
+{% block body %}
+
+<div  class="container mt-5">
+<h3>Tous nos artistes</h3>
+{% for artist in artists %}
+    {% include "artist_views/artistItem.html.twig" %}
+{% endfor %}
+</div>
+
+{% endblock %}

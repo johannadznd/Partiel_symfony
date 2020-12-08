@@ -1,0 +1,15 @@
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+    <img src="{{ asset('uploads/' ~ artist.picture) }}​​" class="card-img-top" alt="{{ artist.name }}​​">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{artist.name}}</h5>
+        <p>Style : {{artist.style.name}}</p>
+        <a class="btn btn-light" href="{{path('artist_item', {'id' : artist.id})}}" role="button">Découvrir l'artiste</a>
+      </div>
+    </div>
+  </div>
+</div>
+
