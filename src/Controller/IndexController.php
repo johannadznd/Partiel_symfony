@@ -18,11 +18,9 @@ class IndexController extends AbstractController
     public function index(AlbumRepository $albumRepository, ArtistRepository $artistRepository): Response
     {
         $albums = $albumRepository->FindLast(30);
-        $artist = $artistRepository->findAll();
 
         return $this->render('index/index.html.twig', [
             'albums'=> $albums,
-            'artist'=> $artist
         ]);
     }
 }
